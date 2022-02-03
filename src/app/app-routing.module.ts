@@ -26,7 +26,7 @@ const routes: Routes = [
   {
     path: 'edit',
     loadChildren: () =>
-      import('./edit-root/edit.module').then((e) => e.EditModule),
+      import('./edit-root/edit-root.module').then((e) => e.EditModule),
   },
   {
     path: 'login',

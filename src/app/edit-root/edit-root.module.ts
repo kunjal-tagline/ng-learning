@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { EditRoutingModule } from './edit-routing.module';
+import { EditRoutingModule } from './edit-root-routing.module';
 import { EditComponent } from './edit/edit.component';
 
 @NgModule({
