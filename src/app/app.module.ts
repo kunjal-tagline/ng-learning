@@ -9,6 +9,9 @@ import { ManagerComponent } from './manager-main/manager.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { Manager1Component } from './manager1/manager1.component';
+import { SenderComponent } from './sender/sender.component';
+import { ReceiverComponent } from './receiver/receiver.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,10 +23,13 @@ import { Manager1Component } from './manager1/manager1.component';
     LoginComponent,
     HeaderComponent,
     Manager1Component,
+    SenderComponent,
+    ReceiverComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

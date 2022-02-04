@@ -9,9 +9,9 @@ import { map, filter } from 'rxjs/operators';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  [x: string]: any;
+ 
   constructor(private router: Router) {}
-
+  
   ngOnInit() {
     //observable
     const observable$ = new Observable((Subscriber) => {
@@ -36,22 +36,7 @@ export class HomeComponent implements OnInit {
       },
     });
 
-    //function observable
-    const functionObservables$ = new Observable(function subscribe(Subscriber) {
-      const intervalId = setInterval(() => {
-        Subscriber.next('calling function');
-      }, 2000);
-      // return function unsubscribe() {
-      //   clearInterval(intervalId);
-      // };
-      setTimeout(() => {
-        Subscriber.complete();
-      }, 10000);
-    });
-
-    functionObservables$.subscribe((value) => console.log(value));
-
-    //customn interval observable
+    //custom interval observable
     const customIntervalObservable = new Observable((Subscriber) => {
       let count = 0;
       setInterval(() => {
@@ -88,5 +73,4 @@ export class HomeComponent implements OnInit {
   public onLoadLogin(): void {
     this.router.navigate(['login', 1, 'kunjal']);
   }
-  
 }
