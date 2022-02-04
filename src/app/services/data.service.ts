@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class DataService {
-  private dataSource$ = new BehaviorSubject<object>({ name: 'Kunj' });
+  private dataSource$ = new BehaviorSubject<object>({ name: 'Manager here!!!' });
   getData = this.dataSource$.asObservable();
   constructor() {}
 

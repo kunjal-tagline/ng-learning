@@ -5,6 +5,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { ManagerComponent } from './manager-main/manager.component';
 import { Manager1Component } from './manager1/manager1.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   {
@@ -26,7 +27,7 @@ const routes: Routes = [
   {
     path: 'edit',
     loadChildren: () =>
-      import('./edit-root/edit-root.module').then((e) => e.EditModule),
+      import('./edit-root/edit-root.module').then((m) => m.EditModule),
   },
   {
     path: 'login',
@@ -37,6 +38,15 @@ const routes: Routes = [
         component: LoginComponent,
       },
     ],
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
+  },
+  {
+    path: 'adminlogin',
+    loadChildren: () =>
+      import('./admin-root/admin-root.module').then((m) => m.AdminRootModule),
   },
   {
     path: '',

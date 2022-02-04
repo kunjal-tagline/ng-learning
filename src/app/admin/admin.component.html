@@ -1,0 +1,24 @@
+<div class="conatiner align-center">
+    <div class="row pt-5 justify-content-center ">
+        <div class="col-sm-4 align-center card pb-4 ">
+            <div class="card-title pt-4 text-info h2 text-center">
+                ADMIN
+            </div>
+            <div class="card-body m-3 bg-secondary rounded-3">
+                <div class="mb-3">
+                    <label for="name" class="form-label" id="adminname" >Admin name</label>
+                    <input type="email" class="form-control" #adminname>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label" id="adminpassword">Password</label>
+                    <input class="form-control">
+                </div>
+                <div class="mb-3 ">
+                    <button class="btn-success w-100 p-2 rounded-pill" (click)="loginAdmin()
+                    ">Login</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
