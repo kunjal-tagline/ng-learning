@@ -1,15 +1,16 @@
+import { AuthserviceService } from './../../services/authservice.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
-  styleUrls: ['./admin-dashboard.component.scss']
+  styleUrls: ['./admin-dashboard.component.scss'],
 })
 export class AdminDashboardComponent implements OnInit {
+  constructor(public authservice: AuthserviceService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  logoutadmin() {
+    this.authservice.logout();
   }
-
 }

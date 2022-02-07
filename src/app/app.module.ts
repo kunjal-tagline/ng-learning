@@ -1,3 +1,4 @@
+import { AuthGuard } from './guard/auth.guard';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,8 +14,6 @@ import { ReceiverComponent } from './receiver/receiver.component';
 import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,14 +25,10 @@ import { AdminComponent } from './admin/admin.component';
     Manager1Component,
     SenderComponent,
     ReceiverComponent,
-    AdminComponent
+    AdminComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  providers: [AuthGuard],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

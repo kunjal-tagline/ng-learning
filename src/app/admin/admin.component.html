@@ -5,17 +5,19 @@
                 ADMIN
             </div>
             <div class="card-body m-3 bg-secondary rounded-3">
-                <div class="mb-3">
-                    <label for="name" class="form-label" id="adminname" >Admin name</label>
-                    <input type="email" class="form-control" #adminname>
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label" id="adminpassword">Password</label>
-                    <input class="form-control">
-                </div>
+                <form #authForm="ngForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Admin name</label>
+                        <input type="name" class="form-control" id="idname" #adminname1 required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="idpassword" #password1 required>
+                    </div>
+                </form>
                 <div class="mb-3 ">
-                    <button class="btn-success w-100 p-2 rounded-pill" (click)="loginAdmin()
-                    ">Login</button>
+                    <button type="submit" class="btn-success w-100 p-2 rounded-pill"
+                        (click)="checkCredincial(adminname1.value,password1.value)">Login</button>
                 </div>
             </div>
 
