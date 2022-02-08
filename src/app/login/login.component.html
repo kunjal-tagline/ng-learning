@@ -1,9 +1,51 @@
-<div class="col-sm-5 pt-3">
-    <label for="uaserid">USERID</label>
-    <input type="text" name="userid" placeholder="enter user id">
-    <p></p>
-</div>
-<div class="col-sm-5 pt-5">
-    <label for="password">PASSWORD</label>
-    <input type="text" name="userid" value="" placeholder="enter password">
+<div class="container">
+    <div class="row pt-5 justify-content-center">
+        <div class=" col-sm-4 card bg-info">
+            <div class="pt-3 card-title text-center h3">
+                LOGIN FORM
+            </div>
+            <div class="card-body justify-content-center">
+                <form #loginForm="ngForm" (ngSubmit)="onSubmit()" ng-invalid>
+                    <div class="mb-3 form-group">
+                        <div class="mb-4 form-group">
+                            <label for="email" class="form-label">EMAIL</label><br>
+                            <input ngModel type="text" class="form-control" id="loginEmail" name="email" required
+                                pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #loginEmail="ngModel">
+                            <span class="text-danger" *ngIf="loginEmail.touched && loginEmail.invalid">*Email is not
+                                valid!</span>
+                        </div>
+                        <!-- <div class="mb-4 form-group"> 
+                                <div class="radio" *ngFor="let gender of genders">
+                                    <label>
+                                        <input type="radio" id="loginGender" ngModel name="radio" value="{{gender}}">{{gender}}
+                                    </label>
+                                </div>
+                        </div> -->
+                        <div ngModelGroup="logindata">
+                            <div class="mb-4 form-group">
+                                <label for="username" class="form-label">USERNAME</label><br>
+                                <input ngModel type="name" class="form-control" id="loginUsername" name="username"
+                                    required #loginUsername="ngModel">
+                            </div>
+                            <div class="mb-4 form-group">
+                                <label for="password" class="form-label">PASSWORD</label><br>
+                                <input ngModel type="password" class="form-control" id="loginPassword" name="password"
+                                    #loginPassword="ngModel" required minlength="8" pattern="">
+                                <span class="text-danger" *ngIf="loginPassword.hasError('minlength')">*Password length
+                                    should be 8 character</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="form-control btn-dark mb-3"
+                            [disabled]="loginForm.invalid">LOGIN</button>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
 </div>

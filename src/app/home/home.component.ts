@@ -71,6 +71,6 @@ export class HomeComponent implements OnInit {
   }
 
   public onLoadLogin(): void {
-    this.router.navigate(['login', 1, 'kunjal']);
+    this.router.navigate(['login']);
   }
 }
