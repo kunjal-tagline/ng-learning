@@ -11,8 +11,9 @@ import { HeaderComponent } from './header/header.component';
 import { Manager1Component } from './manager1/manager1.component';
 import { SenderComponent } from './sender/sender.component';
 import { ReceiverComponent } from './receiver/receiver.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +27,9 @@ import { AdminComponent } from './admin/admin.component';
     SenderComponent,
     ReceiverComponent,
     AdminComponent,
+    ReactiveFormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [AuthGuard],
   bootstrap: [AppComponent],
 })

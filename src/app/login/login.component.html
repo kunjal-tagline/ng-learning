@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="false">
     <div class="row pt-5 justify-content-center">
         <div class=" col-sm-4 card bg-info">
             <div class="pt-3 card-title text-center h3">
@@ -39,13 +39,10 @@
                     <div>
                         <button type="submit" class="form-control btn-dark mb-3"
                             [disabled]="loginForm.invalid">LOGIN</button>
-
                     </div>
                 </form>
             </div>
-
         </div>
-
     </div>
-
 </div>
+<app-reactive-form></app-reactive-form>
