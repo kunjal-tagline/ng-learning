@@ -1,10 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RelativeComponent } from './relative/relative.component';
+import { TempalteDrivenComponent } from './tempalte-driven/tempalte-driven.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'login',
+    component: TempalteDrivenComponent,
+  },
+  {
+    path: 'register',
+    component: RelativeComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
