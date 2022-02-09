@@ -4,9 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TempalteDrivenComponent } from './tempalte-driven/tempalte-driven.component';
+import { RelativeComponent } from './relative/relative.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TempalteDrivenComponent, RelativeComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
