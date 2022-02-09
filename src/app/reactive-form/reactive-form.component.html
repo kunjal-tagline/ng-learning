@@ -1,22 +1,37 @@
 <div class="container">
-    <div class="row pt-5 justify-content-center">
+    <div class="row pt-5 ">
+        REACTIVE FORM
         <form [formGroup]="reactiveForm" (ngSubmit)="reactiveFormSubmit()">
-            <div class="mb-3 form-group">
+            <div class="p-3 form-group">
                 <div>
-                    <label for="username" id="username">USERNAME</label>
-                    <input type="text" [formControlName]="'username'">
+                    <label for="email" id="email" class="h5">EMAIL</label>
+                    <input type="text" class="form-control" [formControlName]="'email'" placeholder="Email id">
+                    <span *ngIf="reactiveForm.get('email')?.invalid" class="text-danger">*Email is not valid</span>
                 </div>
             </div>
-            <div class="mb-3 form-group">
+            <div class="p-3 form-group">
                 <div>
-                    <label for="password" id="password">PASSWORD</label>
-                    <input type="password" formControlName="password">
+                    <label for="username" id="username" class="h5">USERNAME</label>
+                    <input type="text" class="form-control" [formControlName]="'username'" >
+                    <!-- <div *ngIf="reactiveForm.get('username')?.invalid">
+                        <span *ngIf="reactiveForm.get('username')?.hasError('required')" class="text-danger">*username is required</span>
+                        <span *ngIf="reactiveForm.get('username')?.hasError('minlegth')" class="text-danger">*userame must be at least 3 characters long. </span>
+                        <span *ngIf="reactiveForm.get('username')?.hasError('maxlegth')" class="text-danger">*Name can be max 10 characters long. </span>
+                    </div> -->
+
+                   
                 </div>
             </div>
-            <div class="mb-3 form-group">
-                <button type="submit">LOGIN</button>
+            <div class="p-3 form-group">
+                <div>
+                    <label for="password" id="password" class="h5">PASSWORD</label>
+                    <input type="password" class="form-control" formControlName="password" >
+                    <span *ngIf="reactiveForm.get('password')?.hasError('minlength')" class="text-danger">*Password need minimum 8 character</span>
+                </div>
+            </div>
+            <div class="p-3 form-group">
+                <button type="submit" class="btn btn-success" [disabled]="reactiveForm.invalid">LOGIN</button>
             </div>
         </form>
-
     </div>
 </div>
