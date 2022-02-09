@@ -2,6 +2,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,7 +10,10 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   @ViewChild('loginForm') form: NgForm | undefined;
-  //public genders=['male', 'female'];
+  // public genders=['male', 'female'];
+  // selectedgender='female';
+  public user= { email: '', username: '', password: ''};
+  showLoginData: boolean=false;
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
@@ -25,6 +29,10 @@ export class LoginComponent implements OnInit {
 
   public onSubmit(){
     console.log('Form :>> ',this.form);
+    this.user.email=this.form?.value.email;
+    this.user.username=this.form?.value.logindata.username;
+    this.user.password=this.form?.value.logindata.password;
+    this.showLoginData=true;
   }
 
   // public log(value:any){

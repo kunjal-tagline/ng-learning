@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container" *ngIf="true">
     <div class="row pt-5 justify-content-center">
         <div class=" col-sm-4 card bg-info">
             <div class="pt-3 card-title text-center h3">
                 LOGIN FORM
             </div>
             <div class="card-body justify-content-center">
-                <form #loginForm="ngForm" (ngSubmit)="onSubmit()" ng-invalid>
+                <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
                     <div class="mb-3 form-group">
                         <div class="mb-4 form-group">
                             <label for="email" class="form-label">EMAIL</label><br>
@@ -14,12 +14,13 @@
                             <span class="text-danger" *ngIf="loginEmail.touched && loginEmail.invalid">*Email is not
                                 valid!</span>
                         </div>
-                        <!-- <div class="mb-4 form-group"> 
-                                <div class="radio" *ngFor="let gender of genders">
-                                    <label>
-                                        <input type="radio" id="loginGender" ngModel name="radio" value="{{gender}}">{{gender}}
-                                    </label>
-                                </div>
+                        <!-- <div class="mb-4 form-group">
+                            <div class="radio" *ngFor="let gender of genders">
+                                <label>
+                                    <input type="radio" id="loginGender" ngModel name="radio" value="{{gender}}"
+                                        [(ngModel)]="selectedgender">{{gender}}
+                                </label>
+                            </div>
                         </div> -->
                         <div ngModelGroup="logindata">
                             <div class="mb-4 form-group">
@@ -39,13 +40,18 @@
                     <div>
                         <button type="submit" class="form-control btn-dark mb-3"
                             [disabled]="loginForm.invalid">LOGIN</button>
-
                     </div>
                 </form>
             </div>
-
+            <div class="row bg-light">
+                <div *ngIf="showLoginData">
+                    <label>EMAIL : </label>
+                    <span class="text-secondary">{{user?.email}}</span><br>
+                    <label>USERNAME : </label>
+                    <span class="text-secondary">{{user?.username}}</span><br>
+                    <label>PASSWORD : </label>
+                    <span class="text-secondary">{{user?.password}}</span>
+                </div>
+            </div>
         </div>
-
     </div>
-
-</div>

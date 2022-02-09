@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row pt-5 justify-content-center">
+        <form [formGroup]="reactiveForm" (ngSubmit)="reactiveFormSubmit()">
+            <div class="mb-3 form-group">
+                <div>
+                    <label for="username" id="username">USERNAME</label>
+                    <input type="text" [formControlName]="'username'">
+                </div>
+            </div>
+            <div class="mb-3 form-group">
+                <div>
+                    <label for="password" id="password">PASSWORD</label>
+                    <input type="password" formControlName="password">
+                </div>
+            </div>
+            <div class="mb-3 form-group">
+                <button type="submit">LOGIN</button>
+            </div>
+        </form>
+
+    </div>
+</div>
