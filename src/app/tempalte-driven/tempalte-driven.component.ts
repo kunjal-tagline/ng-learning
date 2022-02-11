@@ -8,15 +8,17 @@ import { NgForm } from '@angular/forms';
 })
 export class TempalteDrivenComponent implements OnInit {
   @ViewChild('loginForm') loginForm!: NgForm;
+
   public loginUsers = {
     username: '',
     password: '',
   };
+
   constructor() {}
 
   ngOnInit(): void {}
 
-  public loginFormSubmit() {
+  public loginFormSubmit(): void {
     this.loginUsers.username = this.loginForm.value.loginUsername;
     this.loginUsers.password = this.loginForm.value.loginPassword;
   }

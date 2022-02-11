@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { RelativeComponent } from './relative/relative.component';
+import { ReactiveComponent } from './reactive/reactive.component';
 import { TempalteDrivenComponent } from './tempalte-driven/tempalte-driven.component';
 
 const routes: Routes = [
@@ -10,11 +11,11 @@ const routes: Routes = [
   },
   {
     path: 'register',
-    component: RelativeComponent,
+    component: ReactiveComponent,
   },
   {
-    path: '',
-    redirectTo: '/login',
+    path: '**',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
 ];

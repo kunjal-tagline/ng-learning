@@ -1,0 +1,138 @@
+<div class="container">
+    <div class="row p-4 justify-content-center">
+        <div class="card p-3 w-50 bg-dark">
+            <div class="card-title text-center p-2 bg-warning h3 rounded-3">
+                REGISTRATION FORM
+            </div>
+
+            <div class="card-body bg-light m-3 rounded-3">
+                <form class="mt-3" [formGroup]="reactiveForm" (ngSubmit)="onSubmitRegister(reactiveForm)">
+                    <div class="d-flex justify-content-between m-3">
+                        <div class="col-sm-5">
+                            <label for="firstname">Firstname<i class="text-danger">*</i></label>
+                            <input type="text" name="firstname" class="form-control" formControlName="firstname" />
+                            <div class="text-danger"
+                                *ngIf="reactiveForm.get('firstname')?.touched && reactiveForm.get('firstname')?.invalid">
+                                Firstname required
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <label for="lastname">Lastname<i class="text-danger">*</i></label>
+                            <input type="text" name="lastname" class="form-control" formControlName="lastname" />
+                            <div class="text-danger"
+                                *ngIf="reactiveForm.get('lastname')?.touched && reactiveForm.get('lastname')?.invalid">
+                                Lastname required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="m-3 justify-content-evenly">
+                        <label for="email">Email<i class="text-danger">*</i></label>
+                        <input type="text" class="form-control" formControlName="email">
+                        <div class="text-danger">
+                            <div
+                                *ngIf="reactiveForm.get('email')?.hasError('required') && reactiveForm.get('email')?.touched">
+                                *Email required.
+                            </div>
+                            <div *ngIf="reactiveForm.get('email')?.hasError('pattern')">
+                                *Email is invalid.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="m-3 justify-content-evenly">
+                        <label for="username">Username<i class="text-danger">*</i></label>
+                        <input type="text" class="form-control" formControlName="username">
+                        <div class="text-danger">
+                            <div
+                                *ngIf="reactiveForm.get('username')?.hasError('required') && reactiveForm.get('username')?.touched">
+                                *Username required.
+                            </div>
+                            <div *ngIf="reactiveForm.get('username')?.hasError('minlength')">
+                                *Username must be at least 6 characters long.
+                            </div>
+                            <div *ngIf="reactiveForm.get('username')?.hasError('maxlength')">
+                                *Username allowed only 20 characters.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between m-3">
+                        <div class="col-sm-5 form-group">
+                            <label for="password">Password<i class="text-danger">*</i></label>
+                            <input type="password" class="form-control" formControlName="password">
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="reactiveForm.get('password')?.hasError('required') && reactiveForm.get('password')?.touched">
+                                    *Password required.
+                                </div>
+                                <div *ngIf="reactiveForm.get('password')?.hasError('minlength')">
+                                    *Password must be at least 8 characters long.
+                                </div>
+                                <div *ngIf="reactiveForm.get('password')?.hasError('maxlength')">
+                                    *password allowed only 10 characters.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5 form-group">
+                            <label for="confirmpassword">Confrim Password<i class="text-danger">*</i></label>
+                            <input type="password" class="form-control" formControlName="confirmpassword">
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="reactiveForm.get('confirmpassword')?.hasError('notEquivalent') && reactiveForm.get('confirmpassword')?.touched">
+                                    *Password does not match
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-3">
+                        <label for="gendername">Gender<i class="text-danger">*</i></label>
+                        <div>
+                            <label *ngFor="let item of genders">
+                                <input type="radio" name="gender" id={{item.id}} formControlName="gender"
+                                    [value]="item.value"><span class="m-2">{{item.value}}</span>
+                            </label>
+                        </div>
+                        <div class="text-danger"
+                            *ngIf="reactiveForm.get('gender')?.hasError('required') && reactiveForm.get('gender')?.touched">
+                            *Select your gender.
+                        </div>
+                    </div>
+                    <div class="m-3">
+                        <label for="language">Language<i class="text-danger">*</i></label>
+                        <select name="language" class="form-select-sm" formControlName="select" class="m-2">
+                            <option value="" disabled>Choose your language</option>
+                            <option *ngFor="let item of languages" [ngValue]="item" id={{item.id}}>{{item.value}}
+                            </option>
+                        </select>
+                        <div class="text-danger"
+                            *ngIf="reactiveForm.get('select')?.hasError('required') && reactiveForm.get('select')?.touched">
+                            *Select Langauage.
+                        </div>
+                    </div>
+                    <div class="m-3">
+                        <input type="checkbox" formControlName="checkbox1" name="checkbox1">
+                        <label for="checkbox1" class="ms-2">I agree to recive mail.<i class="text-danger">*</i></label>
+                        <div class="text-danger"
+                            *ngIf="reactiveForm.get('checkbox1')?.hasError('required') && reactiveForm.get('checkbox1')?.touched">
+                            *Please check this
+                        </div>
+                        <br>
+                        <input type="checkbox" formControlName="checkbox2" name="checkbox2">
+                        <label for="checkbox2" class="ms-2">I agree with terms and conditions.<i
+                                class="text-danger">*</i></label>
+                        <div class="text-danger"
+                            *ngIf="reactiveForm.get('checkbox2')?.hasError('required') && reactiveForm.get('checkbox2')?.touched">
+                            *Please check this
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-around mt-2 mb-2">
+                        <button type="submit" class="btn btn-success w-25 "
+                            [disabled]="reactiveForm.invalid">Register</button>
+                        <button type="cancel" class="btn btn-secondary w-25 " (click)="resetTheForm()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
