@@ -47,33 +47,37 @@ export class RelativeComponent implements OnInit {
             Validators.maxLength(20),
           ]),
         ],
-        password: new FormControl (
+        password: [
           '',
           Validators.compose([
             Validators.required,
             Validators.minLength(8),
             Validators.maxLength(10),
           ]),
-        ),
+        ],
         confirmpassword: ['', Validators.required],
         gender: ['', [Validators.required]],
         select: ['', [Validators.required]],
         checkbox1: [false, Validators.requiredTrue],
         checkbox2: [false, Validators.requiredTrue],
-      // },
-      // {
-      //   validators: this.password.bind(this),
-      
-      });
+      },
+      { validator: this.pwdConfirming('password', 'confirmpassword') }
+    );
   }
 
   public onSubmitRegister(reactiveForm: any) {
     console.log('reactiveForm :>> ', reactiveForm);
   }
 
-  // public password(reactiveForm: FormGroup) {
-  //   const { value: password } = reactiveForm.get('password');
-  //   const { value: confirmpassword } = reactiveForm.get('confirmpassword');
-  //   return password === confirmpassword ? null : { passwordNotMatch: true };
-  // }
+  public pwdConfirming(key: string, confirmationKey: string) {
+    return (passwordgroup: FormGroup) => {
+      const passwordInput = passwordgroup.controls[key];
+      const confirmationInput = passwordgroup.controls[confirmationKey];
+      return confirmationInput.setErrors(
+        passwordInput.value !== confirmationInput.value
+          ? { notEquivalent: true }
+          : null
+      );
+    };
+  }
 }
