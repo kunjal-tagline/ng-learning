@@ -18,5 +18,8 @@
 <p>'d/M/y': {{today | date: 'd/M/y'}}</p>
 <p>'M/d/Y': {{today | date: 'M/d/Y'}}</p>
 <p>'y/d/MM': {{today | date: 'y/d/MM'}}</p>
+<p>'mm/ss': {{today | date: 'mm/ss'}}</p>
 <p>date in uppercase: {{today.toString()| uppercase}}</p>
 <p>date in lopwercase: {{today.toString()| lowercase}}</p>
+<p>Custom date pipe:  {{today |customdate: 1: 'dd-MM-yyyy' }}</p>
+<p>Custom date pipe(defalult format):  {{today |customdate: 1 }}</p>
