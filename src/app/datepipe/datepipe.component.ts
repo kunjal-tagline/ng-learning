@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatepipeComponent implements OnInit {
 
+public today:Date=new Date();
+
+
   constructor() { }
 
   ngOnInit(): void {

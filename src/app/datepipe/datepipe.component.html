@@ -1,1 +1,22 @@
-<p>datepipe works!</p>
+<p>{{today}}</p>
+<p>{{today | date}}</p>
+<p>short : {{today | date: 'short' :'upperCase'}}</p>
+<p>medium : {{today | date: 'medium'}}</p>
+<p>long : {{today | date: 'long'}}</p>
+<p>full : {{today | date: 'full'}}</p>
+<p>short date: {{today | date: 'shortDate'}}</p>
+<p>medium date: {{today | date: 'mediumDate'}}</p>
+<p>long date: {{today | date: 'longDate'}}</p>
+<p>full date: {{today | date: 'fullDate'}}</p>
+<p>short time: {{today | date: 'shortTime'}}</p>
+<p>medium time: {{today | date: 'mediumTime'}}</p>
+<p>full time: {{today | date: 'fullTime'}}</p>
+<p>long time: {{today | date: 'longTime'}}</p>
+<p>time zone IST: {{today | date: 'longTime' :'IST'}}</p>
+<p>time zone UTC: {{today | date: 'longTime' :'UTC'}}</p>
+<!-- <p>French date time is {{today | date:'full':'+0200':'fr'}}</p> -->
+<p>'d/M/y': {{today | date: 'd/M/y'}}</p>
+<p>'M/d/Y': {{today | date: 'M/d/Y'}}</p>
+<p>'y/d/MM': {{today | date: 'y/d/MM'}}</p>
+<p>date in uppercase: {{today.toString()| uppercase}}</p>
+<p>date in lopwercase: {{today.toString()| lowercase}}</p>
