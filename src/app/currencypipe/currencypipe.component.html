@@ -1,1 +1,10 @@
-<p>currencypipe works!</p>
+<h3>currency</h3>
+<p>value: {{value}}</p>
+<p>currency value(default 'USD'): {{value | currency}}</p>
+<p>currency value(INR): {{value | currency :'INR'}}</p>
+<p>currency value(INR code): {{value | currency :'INR':'code'}}</p>
+<p>currency value(INR symbol): {{value | currency :'INR':'symbol'}}</p>
+<p>currency value(INR string): {{value | currency :'INR':'Indian rupee'}}</p>
+<p>currency value(INR symbol numberOfInteger:minimumFractions-maxFractions): {{value2 | currency :'INR':'symbol':'4.2-2'}}</p>
+<p>currency value(INR symbol numberOfInteger:minimumFractions-maxFractions): {{value2 | currency :'INR':'symbol':'3.1-1'}}</p>
+
