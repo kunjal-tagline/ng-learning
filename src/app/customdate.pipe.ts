@@ -10,5 +10,4 @@ export class CustomdatePipe implements PipeTransform {
     date.setDate(date.getDate()-day);
     return new DatePipe('en-US').transform(date, format);
   }
-
 }
