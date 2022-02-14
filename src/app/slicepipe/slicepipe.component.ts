@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SlicepipeComponent implements OnInit {
   public sliceArray:Array<String>=['apple','bannana','cherry','Dargon fruit'];
   public sliceString:string='hello everyone welcome in pipe session';
-  
+  public percentData:number=123;
   constructor() { }
 
   ngOnInit(): void {
