@@ -8,7 +8,7 @@ export class CurrencypipeComponent implements OnInit {
 
   public value:number=100000;
   public value2:number=123.456;
-  public arrayvalue:Array<number>=[100,345,123,90];
+  public arrayValue=[1,2,3,4];
   constructor() { }
 
   ngOnInit(): void {

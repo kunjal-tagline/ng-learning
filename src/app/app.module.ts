@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { DatepipeComponent } from './datepipe/datepipe.component';
 import { CustomdatePipe } from './customdate.pipe';
 import { CurrencypipeComponent } from './currencypipe/currencypipe.component';
+import { CustomcurrencyPipe } from './customcurrency.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     DatepipeComponent,
     CustomdatePipe,
-    CurrencypipeComponent
+    CurrencypipeComponent,
+    CustomcurrencyPipe
   ],
   imports: [
     BrowserModule,
