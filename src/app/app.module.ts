@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DatepipeComponent } from './datepipe/datepipe.component';
 import { CustomdatePipe } from './customdate.pipe';
+import { CurrencypipeComponent } from './currencypipe/currencypipe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DatepipeComponent,
-    CustomdatePipe
+    CustomdatePipe,
+    CurrencypipeComponent
   ],
   imports: [
     BrowserModule,
