@@ -9,6 +9,7 @@ import { CurrencypipeComponent } from './currencypipe/currencypipe.component';
 import { CustomcurrencyPipe } from './customcurrency.pipe';
 import { SlicepipeComponent } from './slicepipe/slicepipe.component';
 import { AsyncpipeComponent } from './asyncpipe/asyncpipe.component';
+import { JsonpipeComponent } from './jsonpipe/jsonpipe.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AsyncpipeComponent } from './asyncpipe/asyncpipe.component';
     CurrencypipeComponent,
     CustomcurrencyPipe,
     SlicepipeComponent,
-    AsyncpipeComponent
+    AsyncpipeComponent,
+    JsonpipeComponent
   ],
   imports: [
     BrowserModule,
