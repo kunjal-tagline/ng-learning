@@ -5,7 +5,7 @@ import { DatePipe } from '@angular/common';
 })
 export class CustomdatePipe implements PipeTransform {
 
-  transform(date: Date | String,day:number, format:string='yyyy-MM-dd'): any{
+  transform(date: Date | String, day:number, format:string='yyyy-MM-dd'): any{
     date = new Date(); 
     date.setDate(date.getDate()-day);
     return new DatePipe('en-US').transform(date, format);
