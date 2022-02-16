@@ -35,4 +35,10 @@ export class HttpclientService {
   public postUsers(postData: object): Observable<User> {
     return this.httpClient.post<User>(this.postsurl, postData);
   }
+
+  //delet data
+  public deleteData(id: number): Observable<unknown> {
+    let endPoints = this.postsurl + '/' + id;
+    return this.httpClient.delete(endPoints);
+  }
 }

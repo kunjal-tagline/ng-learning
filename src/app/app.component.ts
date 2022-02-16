@@ -11,12 +11,12 @@ export class AppComponent implements OnInit {
   title = 'routingpractical';
   public resultgetdata!: User;
   public usersdata: any = [];
-  public postusersdata:any=[];
+  public postusersdata: any = [];
 
-  public Users={
-    id:101,
-    title:'hello this is my post',
-  }
+  public Users = {
+    id: 101,
+    title: 'hello this is my post',
+  };
   constructor(private httpclientService: HttpclientService) {}
 
   ngOnInit() {
@@ -33,9 +33,15 @@ export class AppComponent implements OnInit {
     });
 
     //post users
-    this.httpclientService.postUsers(this.Users).subscribe((post:any)=>{
+    this.httpclientService.postUsers(this.Users).subscribe((post: any) => {
       console.log('post :>> ', post);
-      this.postusersdata=post;
+    });
+  }
+
+  //delete data
+  public deleteOnclick(): void {
+    this.httpclientService.deleteData(1).subscribe((deletearg: any) => {
+      console.log('delelte :>> ', deletearg);
     });
   }
 }
