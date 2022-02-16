@@ -1,2 +1,9 @@
-
+<ul *ngFor="let items of usersdata">
+    <span *ngIf="items.id < 10">
+        <p>id: {{items.id}}</p>
+        <p>Userid: {{items.userId}}</p>
+        <p>title: {{items.title}}</p>
+        <hr>
+    </span>
+</ul>
 <router-outlet></router-outlet>
