@@ -1,9 +1,16 @@
+<h3>Get data </h3>
 <ul *ngFor="let items of usersdata">
-    <span *ngIf="items.id < 10">
+    <span *ngIf="items.id < 5">
         <p>id: {{items.id}}</p>
         <p>Userid: {{items.userId}}</p>
         <p>title: {{items.title}}</p>
         <hr>
+    </span>
+</ul>
+<h3>Getting data using behaviour subject </h3>
+<ul *ngFor="let items of usersdata">
+    <span *ngIf="items.id < 9">
+        <p>id: {{items.id}}</p>
     </span>
 </ul>
 <router-outlet></router-outlet>
