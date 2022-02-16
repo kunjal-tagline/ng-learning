@@ -30,4 +30,9 @@ export class HttpclientService {
       this.todo$.next(data);
     });
   }
+
+  //post data
+  public postUsers(postData: object): Observable<User> {
+    return this.httpClient.post<User>(this.postsurl, postData);
+  }
 }

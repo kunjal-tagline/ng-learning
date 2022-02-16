@@ -1,6 +1,6 @@
 import { User } from './interfaces/user';
 import { HttpclientService } from './services/httpclient.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, PipeTransform } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,12 @@ export class AppComponent implements OnInit {
   title = 'routingpractical';
   public resultgetdata!: User;
   public usersdata: any = [];
+  public postusersdata:any=[];
 
+  public Users={
+    id:101,
+    title:'hello this is my post',
+  }
   constructor(private httpclientService: HttpclientService) {}
 
   ngOnInit() {
@@ -22,10 +27,15 @@ export class AppComponent implements OnInit {
     });
 
     //getting data using behaviour subject
-    this.httpclientService.getdata();
     this.httpclientService.todoObs().subscribe((arg: any) => {
       //console.log('arg :>> ', arg);
       this.usersdata = arg;
+    });
+
+    //post users
+    this.httpclientService.postUsers(this.Users).subscribe((post:any)=>{
+      console.log('post :>> ', post);
+      this.postusersdata=post;
     });
   }
 }
